@@ -3,7 +3,9 @@
  * src/credit: Peters, Keith. Playing with Chaos: Programming Fractals and Strange Attractors in JavaScript
  */
 class Chaos {
-  constructor() {}
+  constructor() {
+    this.init();
+  }
 
   /**
    * Initializes chaos by finding the canvas on the
@@ -16,8 +18,8 @@ class Chaos {
     this.setSize(window.innerWidth, window.innerHeight);
   }
   setSize(width, height) {
-    this.width = this.canvasWidth = width;
-    this.height = this.canvasHeight = height;
+    this.width = this.canvas.width = width;
+    this.height = this.canvas.height = height;
   }
   /**
    * Clears the canvas by filling it with the color
