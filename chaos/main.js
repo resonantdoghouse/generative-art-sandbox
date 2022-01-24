@@ -1,6 +1,7 @@
-import './style.css'
+import './style.css';
+import Chaos from './Chaos';
 
-document.querySelector('#app').innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+const chaos = new Chaos();
+chaos.init();
+
+console.log(chaos);
