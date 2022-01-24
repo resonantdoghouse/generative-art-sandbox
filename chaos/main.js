@@ -1,9 +1,7 @@
 import './style.css';
 import Chaos from './Chaos';
 
-console.log(window.innerWidth);
 const chaos = new Chaos();
-console.dir(chaos.context);
 
 const draw = () => {
   let x = Math.random() * (chaos.width - 100),
@@ -13,9 +11,7 @@ const draw = () => {
     r = Math.floor(Math.random() * 256),
     g = Math.floor(Math.random() * 256),
     b = Math.floor(Math.random() * 256);
-  console.log(x);
   chaos.context.fillStyle = 'rgb(' + r + ',' + g + ',' + b + ')';
-  console.log(chaos.context.fillStyle);
   chaos.context.fillRect(x, y, w, h);
 };
 
