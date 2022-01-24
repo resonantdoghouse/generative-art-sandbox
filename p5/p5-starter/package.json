@@ -1,5 +1,5 @@
 {
-  "name": "p5-perlin-2d",
+  "name": "p5-starter",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
@@ -8,5 +8,8 @@
   },
   "devDependencies": {
     "vite": "^2.7.2"
+  },
+  "dependencies": {
+    "p5": "^1.4.0"
   }
 }
