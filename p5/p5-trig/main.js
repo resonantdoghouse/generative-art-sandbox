@@ -2,58 +2,44 @@ import p5 from 'p5';
 import Circle from './Circle';
 import './style.css';
 
-const list_of_colors = ['skyblue', 'darkviolet', 'coral'];
-const circlesArray = [];
-
 const sketch = (s) => {
+  let a = 0.0;
+  let inc = s.TWO_PI / 25.0;
+
+  const list_of_colors = ['skyblue', 'darkturquoise', 'aquamarine'];
+
   s.setup = function () {
     s.createCanvas(window.innerWidth, window.innerHeight);
-    s.noLoop();
-    s.noStroke();
+    // s.noLoop();
+    s.frameRate(1);
   };
 
   s.draw = () => {
-    s.background(255);
-    let loopCounts = 0;
+    s.background(0);
 
-    for (let cluster = 0; cluster < 6; cluster += 1) {
-      // x & y position of clusters, used as well to draw circles around
-      let x = s.random(100, s.width - 100);
-      let y = s.random(100, s.height - 100);
+    let color_1, color_2, color;
 
-      let color_1 = s.random(list_of_colors);
-      let color_2 = s.random(list_of_colors);
-      let color = s.lerpColor(s.color(color_1), s.color(color_2), s.random());
-      // s.fill('orange');
-      // s.ellipse(x, y, s.random(3, 30));
-
-      for (let circles = 0; circles < 3; circles += 1) {
-        let circle_x = s.random(x - 100, x + 100);
-        let circle_y = s.random(y - 100, y + 100);
-        let circle_size = s.random(6, 50);
-        const circle = new Circle(circle_x, circle_y, circle_size, color);
-        circlesArray.push(circle);
-        s.push();
-        s.fill(circle.color);
-        s.ellipse(circle.x, circle.y, circle.size);
-        if (circlesArray[loopCounts - 1] !== undefined) {
-          s.stroke('skyblue');
-          s.line(
-            circlesArray[loopCounts].x,
-            circlesArray[loopCounts].y,
-            circlesArray[loopCounts - 1].x,
-            circlesArray[loopCounts - 1].y
-          );
-        }
-        s.pop();
-        loopCounts++;
+    for (let i = 0; i < s.width; i++) {
+      if (i % 15 === 0) {
+        color_1 = s.random(list_of_colors);
+        color_2 = s.random(list_of_colors);
+        color = s.lerpColor(s.color(color_1), s.color(color_2), s.random());
       }
+      s.stroke(color);
+      s.strokeWeight(3);
+      s.line(
+        i * 4,
+        s.height / 2 + s.cos(a) * s.height * 0.3,
+        i * 4,
+        s.height / 2 + s.cos(a) * s.height * 0.3
+      );
+
+      a = a + inc * 0.5;
     }
   };
 
   s.windowResized = () => {
     s.resizeCanvas(s.windowWidth, s.windowHeight);
-    circlesArray.length = 0;
   };
 };
 

@@ -1,5 +1,5 @@
 {
-  "name": "p5-dots",
+  "name": "p5-trig",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
@@ -10,6 +10,7 @@
     "vite": "^2.7.2"
   },
   "dependencies": {
+    "@types/p5": "^1.4.3",
     "p5": "^1.4.0"
   }
 }
