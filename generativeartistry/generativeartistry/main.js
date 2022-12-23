@@ -1,11 +1,12 @@
-import './style.css';
+import "./style.css";
 
 // https://generativeartistry.com/tutorials/hours-of-dark/
-const canvas = document.querySelector('canvas');
-const context = canvas.getContext('2d');
+const canvas = document.querySelector("canvas");
+const context = canvas.getContext("2d");
 
 let size = window.innerWidth;
 let dpr = window.devicePixelRatio;
+
 canvas.width = size * dpr;
 canvas.height = size * dpr;
 context.scale(dpr, dpr);
