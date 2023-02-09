@@ -11,6 +11,7 @@ chaos.init();
 size = chaos.height * 0.5;
 
 const drawTriangle = (depth) => {
+
   var angle = -Math.PI / 2;
   if (depth === 0) {
     chaos.context.beginPath();
