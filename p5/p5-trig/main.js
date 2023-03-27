@@ -6,7 +6,7 @@ const settings = {
   fps: 5,
   lineWidth: 3,
   lineHeight: 0.3,
-  angle: 2.4
+  angle: 2.4,
 }
 
 const gui = new dat.GUI()
@@ -21,21 +21,21 @@ const sketch = (s) => {
     })
     .step(1)
 
-    lineSettings
+  lineSettings
     .add(settings, 'lineWidth', 1, 20)
     .onChange((value) => {
       settings.lineWidth = value
     })
     .step(1)
 
-    lineSettings
+  lineSettings
     .add(settings, 'angle', 0.1, 10)
     .onChange((value) => {
       settings.angle = value
     })
     .step(0.1)
 
-    lineSettings
+  lineSettings
     .add(settings, 'lineHeight', 0, 0.6)
     .onChange((value) => {
       settings.lineHeight = value
@@ -44,7 +44,7 @@ const sketch = (s) => {
 
   let a = 0.0
   let inc = s.TWO_PI / 25.0
-  
+
   const modulo = 15
 
   const list_of_colors = ['skyblue', 'darkturquoise', 'aquamarine']
